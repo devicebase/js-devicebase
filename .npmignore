@@ -1,0 +1,9 @@
+src/
+tests/
+examples/
+tsconfig.json
+tsconfig.cjs.json
+.gitignore
+.DS_Store
+*.tgz
+coverage/
