@@ -47,6 +47,7 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "version": "auto-changelog-plus -p && git add CHANGELOG.md",
+    "postversion": "git push --tags && git push",
     "prepublishOnly": "pnpm build"
   },
   "devDependencies": {

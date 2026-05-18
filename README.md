@@ -1,4 +1,4 @@
-# Devicebase
+# Devicebase JavaScript SDK
 
 JavaScript/TypeScript SDK for [DeviceBase](https://github.com/devicebase) — remote Android, HarmonyOS, and iOS device automation via HTTP API.
 
