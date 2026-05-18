@@ -11,52 +11,52 @@ npm install devicebase
 ## Quick Start
 
 ```typescript
-import { DeviceBaseClient } from "devicebase";
+import { DeviceBaseClient } from 'devicebase'
 
 const client = new DeviceBaseClient({
-  apiKey: "your-api-key",
-  serial: "device-serial-number",
-});
+  apiKey: 'your-api-key',
+  serial: 'device-serial-number',
+})
 
 // Get device info
-const deviceInfo = await client.getDeviceInfo();
+const deviceInfo = await client.getDeviceInfo()
 
 // Take a screenshot
-const screenshot = await client.getScreenshot();
+const screenshot = await client.getScreenshot()
 
 // Touch operations
-await client.tap(100, 200);
-await client.doubleTap(100, 200);
-await client.longPress(100, 200);
-await client.swipe(100, 500, 100, 100);
+await client.tap(100, 200)
+await client.doubleTap(100, 200)
+await client.longPress(100, 200)
+await client.swipe(100, 500, 100, 100)
 
 // Navigation
-await client.back();
-await client.home();
+await client.back()
+await client.home()
 
 // Launch an app
-await client.launchApp("com.tencent.mm");
+await client.launchApp('com.tencent.mm')
 
 // Text input
-await client.inputText("hello world");
-await client.clearText();
+await client.inputText('hello world')
+await client.clearText()
 
 // Get current foreground app
-const appInfo = await client.getCurrentApp();
+const appInfo = await client.getCurrentApp()
 
 // Dump UI hierarchy
-const hierarchy = await client.dumpHierarchy();
+const hierarchy = await client.dumpHierarchy()
 ```
 
 ## Configuration
 
 ```typescript
 const client = new DeviceBaseClient({
-  serial: "device-serial",       // Required: device serial number
-  apiKey: "your-api-key",        // Optional: defaults to DEVICEBASE_API_KEY env var
-  baseUrl: "https://api.devicebase.cn",  // Optional: API base URL
-  timeout: 30000,                 // Optional: request timeout in ms (default: 30000)
-});
+  serial: 'device-serial', // Required: device serial number
+  apiKey: 'your-api-key', // Optional: defaults to DEVICEBASE_API_KEY env var
+  baseUrl: 'https://api.devicebase.cn', // Optional: API base URL
+  timeout: 30000, // Optional: request timeout in ms (default: 30000)
+})
 ```
 
 Environment variables:
@@ -69,38 +69,38 @@ Environment variables:
 ### Screen Streaming (Minicap)
 
 ```typescript
-const minicap = client.minicapClient();
+const minicap = client.minicapClient()
 
 for await (const frame of minicap.streamFrames()) {
   // frame is a Buffer containing JPEG image data
-  console.log("Frame:", frame.length, "bytes");
+  console.log('Frame:', frame.length, 'bytes')
 }
 
 // Or use the convenience method:
 for await (const frame of client.streamMinicap()) {
-  console.log("Frame:", frame.length, "bytes");
+  console.log('Frame:', frame.length, 'bytes')
 }
 ```
 
 ### Touch Control (Minitouch)
 
 ```typescript
-const minitouch = client.minitouchClient();
-await minitouch.connect();
+const minitouch = client.minitouchClient()
+await minitouch.connect()
 
 // Tap
-await minitouch.tap(100, 200);
+await minitouch.tap(100, 200)
 
 // Swipe with custom duration and steps
-await minitouch.swipe(100, 500, 100, 100, 300, 10);
+await minitouch.swipe(100, 500, 100, 100, 300, 10)
 
 // Low-level touch events
-await minitouch.touchDown(0, 100, 200);
-await minitouch.commit();
-await minitouch.touchUp(0);
-await minitouch.commit();
+await minitouch.touchDown(0, 100, 200)
+await minitouch.commit()
+await minitouch.touchUp(0)
+await minitouch.commit()
 
-await minitouch.close();
+await minitouch.close()
 ```
 
 ## API Reference

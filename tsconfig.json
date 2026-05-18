@@ -1,21 +1,26 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
     "lib": ["ES2022"],
-    "types": ["node"],
-    "outDir": "./dist/esm",
-    "declaration": true,
-    "declarationDir": "./dist/types",
+    "moduleDetection": "force",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "types": ["node", "vite/client"],
+    "allowImportingTsExtensions": true,
+
+    /* Linting */
     "strict": true,
-    "esModuleInterop": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noEmit": true,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "declarationMap": true,
-    "sourceMap": true
+    "noUncheckedSideEffectImports": true
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "dist", "tests"]
+  "include": ["src"]
 }
