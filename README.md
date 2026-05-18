@@ -1,5 +1,7 @@
 # Devicebase JavaScript SDK
 
+[![npm version](https://img.shields.io/npm/v/devicebase.svg)](https://www.npmjs.com/package/devicebase)
+
 JavaScript/TypeScript SDK for [DeviceBase](https://github.com/devicebase) — remote Android, HarmonyOS, and iOS device automation via HTTP API.
 
 ## Requirements
