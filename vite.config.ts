@@ -14,6 +14,12 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [/^node:/],
+      output: {
+        globals: {
+          'node:buffer': 'Buffer',
+          'node:process': 'process',
+        },
+      },
     },
     sourcemap: true,
     emptyOutDir: true,

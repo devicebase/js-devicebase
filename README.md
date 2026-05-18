@@ -2,6 +2,10 @@
 
 JavaScript/TypeScript SDK for [DeviceBase](https://github.com/devicebase) — remote Android, HarmonyOS, and iOS device automation via HTTP API.
 
+## Requirements
+
+- Node.js >= 18.0.0 (native `fetch` and `WebSocket`)
+
 ## Installation
 
 ```bash
@@ -126,10 +130,6 @@ await minitouch.close()
 | `minicapClient()` | `MinicapClient` | Create screen streaming WebSocket client |
 | `minitouchClient()` | `MinitouchClient` | Create touch control WebSocket client |
 | `streamMinicap()` | `AsyncGenerator<Buffer>` | Stream JPEG frames |
-
-## Requirements
-
-- Node.js >= 18.0.0 (native `fetch` and `WebSocket`)
 
 ## License
 
