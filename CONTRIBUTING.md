@@ -122,6 +122,6 @@ Running `npm version` will trigger the `version` script in `package.json`.
 ## Security and Configuration
 
 - Do not commit any secrets or sensitive information.
-- For local debugging, you can use environment variables (for example, `API_KEY` and `SERIAL`).
+- For local debugging, you can use environment variables (for example, `DEVICEBASE_API_KEY` and `DEVICEBASE_BASE_URL` etc.).
 
 Thanks again for your contribution.
